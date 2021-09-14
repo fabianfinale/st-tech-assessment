@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './components/Header';
 
 const Layout = () => {
   return (
     <div>
-      {/* Header */}
+      <Header />
       {/* Red section */}
       {/* Yellow section */}
       {/* Perks */}

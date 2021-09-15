@@ -4085,6 +4085,11 @@ csstype@^3.0.2, csstype@^3.0.8:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.9.tgz#6410af31b26bd0520933d02cbc64fce9ce3fbf0b"
   integrity sha512-rpw6JPxK6Rfg1zLOYCSwle2GFOOsnjmDYDaBwEcwoOg4qlsIVCN789VkBZDJAGi4T07gI4YSutR43t9Zz4Lzuw==
 
+custom-cursor-react@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/custom-cursor-react/-/custom-cursor-react-1.0.5.tgz#da23fcc3b467d1540605b02263b026201148cd97"
+  integrity sha512-qfYcmEP46iMZpADWK1NNbyRLWSR+zy9E9vgUThAl/SSbTDKG1Y3CivaCgcN1alNeyf2qhe5XVmOniFrKksGj+g==
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -9316,6 +9321,11 @@ react-dom@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-efficient-cursor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-efficient-cursor/-/react-efficient-cursor-1.0.0.tgz#01abb4a70ec6b2cc6c997cd98836a894b7e335ad"
+  integrity sha512-psktTL7mnW8ZVdPAOBwqRU/P2COLRyPh1P5U4hBqi+7cIPsfsGOlZbS1UgcHfhUxJLt08k5AAJE1liPSCTSk3w==
 
 react-error-overlay@^6.0.9:
   version "6.0.9"

@@ -47,6 +47,16 @@ h2 {
   font-size: calc(1.425rem + 2.1vw);
 }
 
+@media (max-height: 600px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 1200px) {
   h1 {
     font-size: 6.5rem;
@@ -89,7 +99,7 @@ body {
   border-radius: 79px;
   border: 0;
   cursor: pointer;
-  font-size: 2.3rem;
+  font-size: calc(1.1rem + 1.54vw);
   font-weight: 700;
   letter-spacing: 2.3px;
   line-height: 1.21;
@@ -152,6 +162,179 @@ body {
       -4em 2em 2em 3em rgba(200, 0, 50, 0.6),
       0 -3em 2em 3em rgba(200, 250, 0, 0.5),
       -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
+  }
+}
+
+@media (max-height: 600px) {
+  .btn {
+    padding: 2rem 3.4rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn {
+    margin-top: 5.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn {
+    font-size: 2.3rem;
+  }
+}
+
+/* Navbar */
+.navbar {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80px;
+  justify-content: flex-start;
+  left: 0;
+  padding: 1.6rem 2.3rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar__brand {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__logo,
+.navbar__toggler {
+  cursor: pointer;
+}
+
+.navbar__logo {
+  font-size: calc(1.425rem + 2.1vw);
+  height: calc(1.545rem + 3.54vw);
+  letter-spacing: 4.8px;
+  line-height: 1.215;
+  margin: 0;
+}
+
+.navbar__toggler {
+  align-self: stretch;
+  font-size: calc(1.425rem + 2.3vw) !important;
+  height: 100%;
+  margin-right: 3.78rem;
+}
+
+.navbar__logo,
+.navbar__toggler {
+  color: #fff;
+}
+
+.navbar__collapsible {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.collapsible__content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.nav__list {
+  list-style: none;
+  margin-top: 2.6rem;
+}
+
+.nav__item {
+  color: #fff;
+  font-size: calc(1.425rem + 2.1vw);
+  font-weight: 700;
+  letter-spacing: 4.7px;
+  line-height: 1.215;
+  margin-bottom: 1.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar--primary .nav__item:hover {
+  color: #d24848;
+}
+
+.navbar--yellow .nav__item:hover {
+  color: #ffb33f;
+}
+
+.navbar--blue .nav__item:hover {
+  color: #1fe1e9;
+}
+
+.navbar--black .nav__item:hover {
+  color: #000;
+}
+
+.collapsible__shape {
+  background-color: #0b0b0b;
+  border-radius: 100%;
+  height: 68rem;
+  position: absolute;
+  transform: translate(-100%, -100%);
+  transition: all 0.2s;
+  width: 68rem;
+  z-index: -1;
+}
+
+.navbar--primary .collapsible--expanded .navbar__logo,
+.navbar--primary .collapsible--expanded .navbar__toggler {
+  color: #d24848;
+}
+
+.navbar--yellow .collapsible--expanded .navbar__logo,
+.navbar--yellow .collapsible--expanded .navbar__toggler {
+  color: #ffb33f;
+}
+
+.navbar--blue .collapsible--expanded .navbar__logo,
+.navbar--blue .collapsible--expanded .navbar__toggler {
+  color: #1fe1e9;
+}
+
+.navbar--black .collapsible--expanded .navbar__logo,
+.navbar--black .collapsible--expanded .navbar__toggler {
+  color: #000;
+}
+
+.navbar--black .collapsible__shape {
+  background-color: #1fe1e9;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+  transition: all 0.3s;
+  transition-delay: 0.1s;
+}
+
+.collapsible--expanded .collapsible__shape {
+  transform: translate(-30%, -40%);
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 7.6rem 8.3rem;
+  }
+
+  .navbar__logo {
+    font-size: 4.8rem;
+    height: 5.7rem;
+  }
+
+  .nav__item {
+    font-size: 4.7rem;
   }
 }
 
@@ -232,11 +415,24 @@ body {
 
 .header__subtitle {
   color: #fff;
-  font-size: 3.2rem;
+  font-size: calc(1.425rem + 1.1vw);
   font-weight: 500;
   letter-spacing: 3.2px;
   line-height: 1.375;
   margin-top: 3.2rem;
   text-align: center;
-  width: 45%;
+  width: 90%;
+}
+
+@media (max-height: 600px) {
+  .carousel__indicator {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__subtitle {
+    font-size: 3.2rem;
+    width: 45%;
+  }
 }

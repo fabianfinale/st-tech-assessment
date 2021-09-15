@@ -1,9 +1,12 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 const Layout = () => {
   return (
-    <div>
+    <BrowserRouter>
+      <Navbar />
       <Header />
       {/* Red section */}
       {/* Yellow section */}
@@ -11,7 +14,7 @@ const Layout = () => {
       {/* Reviews */}
       {/* Get EXP|CON now */}
       {/* Footer */}
-    </div>
+    </BrowserRouter>
   );
 };
 

@@ -11,8 +11,4 @@ export const headerImages = [
     id: 2,
     imagePath: 'img/Image 3.png',
   },
-  {
-    id: 3,
-    imagePath: 'img/Image 4.png',
-  },
 ];

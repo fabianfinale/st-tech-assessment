@@ -1,16 +1,26 @@
 import { Icon } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ scrollPosition }) => {
   const [collapsed, setCollapsed] = useState(true);
+
+  const navbarColor = {
+    header: 'navbar--primary',
+    redSection: 'navbar--primary',
+    yellowSection: 'navbar--yellow',
+    perksSection: 'navbar--black',
+    reviewsSection: 'navbar--blue',
+    getItNowSection: 'navbar--black',
+  };
 
   const collapsibleClass = collapsed
     ? 'navbar__collapsible'
     : 'navbar__collapsible collapsible--expanded';
 
   return (
-    <nav className='navbar navbar--black'>
+    <nav className={`navbar ${navbarColor[scrollPosition]}`}>
       <div className={collapsibleClass} onMouseLeave={() => setCollapsed(true)}>
         <div className='navbar__brand'>
           <Icon
@@ -19,11 +29,6 @@ const Navbar = () => {
             menu
           </Icon>
           <p className='navbar__logo'>EXP|CON</p>
-          {/* <img
-            className='navbar__logo'
-            src={require('../assets/img/EXPCON.svg').default}
-            alt=''
-          /> */}
         </div>
         <div className='collapsible__shape'></div>
         <div className='collapsible__content'>
@@ -50,4 +55,7 @@ const Navbar = () => {
   );
 };
 
+Navbar.propTypes = {
+  scrollPosition: PropTypes.string.isRequired,
+};
 export default Navbar;

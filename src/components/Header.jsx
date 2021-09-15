@@ -1,12 +1,13 @@
 import React from 'react';
 import { headerImages } from '../utils/headerImages';
 import Carousel from './common/Carousel';
+import PropTypes from 'prop-types';
 
-const Header = () => {
+const Header = ({ reference }) => {
   const dataImages = headerImages.map((image) => image.imagePath);
 
   return (
-    <header className='header'>
+    <header className='header' ref={reference}>
       <Carousel
         className='header__carousel slider'
         items={headerImages}
@@ -26,6 +27,10 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  reference: PropTypes.object.isRequired,
 };
 
 export default Header;

@@ -436,3 +436,39 @@ body {
     width: 45%;
   }
 }
+
+/* Red Section component */
+.red-section {
+  height: 100vh;
+  background-color: #d34848;
+}
+
+/* Yellow Section component */
+.yellow-section {
+  height: 100vh;
+  background-color: #ffb33f;
+}
+
+/* Perks Section component */
+.perks-section {
+  height: 100vh;
+  background-color: #191919;
+}
+
+/* Reviews Section component */
+.reviews-section {
+  height: 100vh;
+  background-color: #1fe1e9;
+}
+
+/* GetItNow Section component */
+.get-it-now-section {
+  height: 60vh;
+  background-color: #191919;
+}
+
+/* Footer component */
+.footer {
+  height: 40vh;
+  background-color: #5e33d1;
+}

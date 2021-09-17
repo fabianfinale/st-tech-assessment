@@ -10,6 +10,7 @@ import YellowSection from './components/YellowSection';
 import Footer from './Footer';
 
 const Layout = () => {
+  const navbarRef = useRef(null);
   const headerRef = useRef(null);
   const redSectionRef = useRef(null);
   const yellowSectionRef = useRef(null);
@@ -19,8 +20,10 @@ const Layout = () => {
   const [scrollPosition, setScrollPosition] = useState('header');
 
   const checkPosition = ({ top, bottom, height }) => {
-    if (top <= 0 && bottom < height && bottom > 0) return true;
-    return false;
+    const navbarHeight = navbarRef.current.clientHeight;
+
+    // Checking which component is visible, assuming the bottom of the navbar as the top boundary. For having viewport top as the boundary, the conditional to evaluate should be "top <= 0 && bottom <= height && bottom > 0"
+    return top <= navbarHeight && bottom - navbarHeight <= height && bottom > 0;
   };
 
   useEffect(() => {
@@ -51,7 +54,7 @@ const Layout = () => {
 
   return (
     <BrowserRouter>
-      <Navbar scrollPosition={scrollPosition} />
+      <Navbar scrollPosition={scrollPosition} reference={navbarRef} />
       <Header reference={headerRef} />
       <RedSection reference={redSectionRef} />
       <YellowSection reference={yellowSectionRef} />

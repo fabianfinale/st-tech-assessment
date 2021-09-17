@@ -19,6 +19,14 @@
   font-display: optional;
 }
 
+:root {
+  --color-red: #d24848;
+  --color-red-btn: #d1346e;
+  --color-yellow: #ffb33f;
+  --color-blue: #1fe1e9;
+  --color-dark: #191919;
+  --color-purple: #5e33d1;
+}
 *,
 *::after,
 *::before {
@@ -116,37 +124,77 @@ body {
 .btn--extra-small {
   padding: 2rem 6.2rem;
   font-size: 1.8rem;
-  position: relative;
 }
 
-.tracking-cursor {
-  position: relative;
+.btn--cta {
+  color: transparent;
+  max-height: 100vh;
+  opacity: 1;
   overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
 }
 
-.tracking-cursor::before {
+.btn--cta::before {
   --size: 0;
-  width: var(--size);
-  height: var(--size);
-  background-image: radial-gradient(circle closest-side, #4405f7, transparent);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(255, 179, 63, 0.7) 0%,
+    rgba(211, 72, 72, 0.6) 30%,
+    rgba(94, 51, 209, 0.5) 60%,
+    rgba(31, 225, 233, 0.4) 90%,
+    transparent
+  );
   content: '';
-  position: absolute;
+  height: var(--size);
   left: var(--x);
+  position: absolute;
   top: var(--y);
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease;
+  width: var(--size);
 }
 
-.tracking-cursor:hover::before {
+.navbar--red .btn--cta,
+.btn--red {
+  color: var(--color-red-btn);
+}
+
+.navbar--yellow .btn--cta {
+  color: var(--color-yellow);
+}
+
+.navbar--black .btn--cta {
+  color: var(--color-dark);
+}
+
+.navbar--blue .btn--cta {
+  color: var(--color-blue);
+}
+
+.btn--cta:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.btn--cta:hover::before {
   --size: 400px;
+}
+
+.btn--cta span {
+  position: relative;
+  pointer-events: none;
+}
+
+.navbar--header .btn--cta,
+.navbar--get-it-now .btn--cta {
+  max-height: 0;
+  opacity: 0;
 }
 
 .btn--white {
   background-color: #fff;
-}
-
-.red-section .btn--white {
-  color: #d1346e;
 }
 
 .btn--gradient {
@@ -296,6 +344,7 @@ body {
 .nav__list {
   list-style: none;
   margin-top: 2.6rem;
+  position: absolute;
 }
 
 .nav__item {
@@ -309,19 +358,21 @@ body {
   text-transform: uppercase;
 }
 
-.navbar--primary .nav__item:hover {
-  color: #d24848;
+.navbar--header .nav__item:hover,
+.navbar--red .nav__item:hover {
+  color: var(--color-red);
 }
 
 .navbar--yellow .nav__item:hover {
-  color: #ffb33f;
+  color: var(--color-yellow);
 }
 
 .navbar--blue .nav__item:hover {
-  color: #1fe1e9;
+  color: var(--color-blue);
 }
 
-.navbar--black .nav__item:hover {
+.navbar--black .nav__item:hover,
+.navbar--get-it-now .nav__item:hover {
   color: #000;
 }
 
@@ -336,28 +387,33 @@ body {
   z-index: -1;
 }
 
-.navbar--primary .collapsible--expanded .navbar__logo,
-.navbar--primary .collapsible--expanded .navbar__toggler {
-  color: #d24848;
+.navbar--header .collapsible--expanded .navbar__logo,
+.navbar--red .collapsible--expanded .navbar__logo,
+.navbar--header .collapsible--expanded .navbar__toggler,
+.navbar--red .collapsible--expanded .navbar__toggler {
+  color: var(--color-red);
 }
 
 .navbar--yellow .collapsible--expanded .navbar__logo,
 .navbar--yellow .collapsible--expanded .navbar__toggler {
-  color: #ffb33f;
+  color: var(--color-yellow);
 }
 
 .navbar--blue .collapsible--expanded .navbar__logo,
 .navbar--blue .collapsible--expanded .navbar__toggler {
-  color: #1fe1e9;
+  color: var(--color-blue);
 }
 
 .navbar--black .collapsible--expanded .navbar__logo,
-.navbar--black .collapsible--expanded .navbar__toggler {
+.navbar--get-it-now .collapsible--expanded .navbar__logo,
+.navbar--black .collapsible--expanded .navbar__toggler,
+.navbar--get-it-now .collapsible--expanded .navbar__toggler {
   color: #000;
 }
 
-.navbar--black .collapsible__shape {
-  background-color: #1fe1e9;
+.navbar--black .collapsible__shape,
+.navbar--get-it-now .collapsible__shape {
+  background-color: var(--color-blue);
 }
 
 .collapsible--expanded .collapsible__content {
@@ -588,31 +644,31 @@ body {
 /* Yellow Section component */
 .yellow-section {
   height: 100vh;
-  background-color: #ffb33f;
+  background-color: var(--color-yellow);
 }
 
 /* Perks Section component */
 .perks-section {
   height: 100vh;
-  background-color: #191919;
+  background-color: var(--color-dark);
 }
 
 /* Reviews Section component */
 .reviews-section {
   height: 100vh;
-  background-color: #1fe1e9;
+  background-color: var(--color-blue);
 }
 
 /* GetItNow Section component */
 .get-it-now-section {
   height: 60vh;
-  background-color: #191919;
+  background-color: var(--color-dark);
 }
 
 /* Footer component */
 .footer {
   height: 40vh;
-  background-color: #5e33d1;
+  background-color: var(--color-purple);
 }
 
 /* Custom Cursor component */

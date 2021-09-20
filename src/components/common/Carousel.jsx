@@ -22,7 +22,6 @@ const Carousel = ({ className, items }) => {
   }, [items]);
 
   const handleChange = (id) => {
-    console.log(`clicked`, id);
     webGLTransition.current.goTo(id);
   };
 

@@ -2,19 +2,17 @@ import { Icon } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import CursorPosition from '../hooks/CursorPosition';
 
 const Navbar = ({ scrollPosition, reference }) => {
   const [collapsed, setCollapsed] = useState(true);
   const [isTracking, setIsTracking] = useState(false);
+  const { x, y } = CursorPosition();
 
-  const handle = (e) => {
+  const handleMouseMove = (e) => {
     if (isTracking) {
-      // Since the button is positioned inside a "fixed" element (navbar), clientX/clientY are used to get the cursor position in which the hover background should be visible.
-      const x = e.clientX - e.target.offsetLeft;
-      const y = e.clientY - e.target.offsetTop;
-
-      e.target.style.setProperty('--x', x + 'px');
-      e.target.style.setProperty('--y', y + 'px');
+      e.target.style.setProperty('--x', `${x - e.target.offsetLeft}px`);
+      e.target.style.setProperty('--y', `${y - e.target.offsetTop}px`);
     }
   };
 
@@ -66,7 +64,7 @@ const Navbar = ({ scrollPosition, reference }) => {
       <button
         className='btn btn__white btn--extra-small btn--cta'
         onMouseEnter={() => setIsTracking(true)}
-        onMouseMove={handle}
+        onMouseMove={handleMouseMove}
         onMouseLeave={() => setIsTracking(false)}>
         <span className='btn__text'>Try it now</span>
       </button>

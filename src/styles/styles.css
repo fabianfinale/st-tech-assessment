@@ -144,6 +144,7 @@ body {
   opacity: 1;
   overflow: hidden;
   position: relative;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
@@ -193,7 +194,7 @@ body {
 }
 
 .btn--cta:hover::before {
-  --size: 400px;
+  --size: 800px;
 }
 
 .btn--cta span {
@@ -211,11 +212,28 @@ body {
   background-color: #fff;
 }
 
+.btn--colored {
+  color: #fff;
+}
+
+.btn--red.btn--colored {
+  background-color: var(--color-red);
+}
+
+.btn--yellow.btn--colored {
+  background-color: var(--color-yellow);
+}
+
+.btn--blue.btn--colored {
+  background-color: var(--color-blue);
+}
+
 .btn--gradient {
   background-color: transparent;
   color: #fff;
   overflow: hidden;
   position: relative;
+  text-decoration: none;
 }
 
 .btn--gradient::before {
@@ -327,6 +345,7 @@ body {
   letter-spacing: 4.8px;
   line-height: 1.215;
   margin: 0;
+  text-decoration: none;
 }
 
 .navbar__toggler {
@@ -741,20 +760,27 @@ body {
 
 /* Perks Section component */
 .perks-section {
-  height: 100vh;
   background-color: var(--color-dark);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .section__listing {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .listing__group {
-  margin: 1.2rem;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 1.2rem;
 }
 
 .listing__heading {
@@ -975,6 +1001,91 @@ body {
 @media (min-width: 1200px) {
   .section__cta {
     padding-right: 15rem;
+  }
+}
+
+/* Pricing Section component */
+.pricing-section {
+  background-color: var(--color-dark);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 8.5rem 0;
+}
+
+.pricing-section .listing__group .listing__heading:nth-of-type(2n)::before {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 3px;
+  margin: 2rem 0;
+}
+
+.pricing .btn--small {
+  width: auto;
+  max-width: 33rem;
+}
+
+.price {
+  font-size: calc(1.545rem + 3.54vw);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list__item {
+  font-size: calc(1.255rem + 1.5vw);
+  letter-spacing: 4.7px;
+  line-height: 1.36;
+}
+
+.list__item::before {
+  content: 'music_note';
+  font-family: 'Material Icons';
+  font-size: 2.1rem;
+  letter-spacing: 2.1px;
+  line-height: 1.2;
+  margin-right: 2rem;
+}
+
+.pricing .perks-section {
+  background-color: var(--color-red);
+  height: 80vh;
+}
+
+.pricing .perks-section .listing__heading {
+  color: #fff;
+}
+
+.pricing .perks-section .listing__heading::before {
+  background-color: #fff;
+}
+
+.pricing .perks-section .listing__text {
+  color: #0b0b0b;
+}
+
+@media (max-height: 600px) {
+  .list__item {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .pricing-section {
+    padding-top: 20rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .list__item {
+    font-size: 4.7rem;
+  }
+
+  .price {
+    font-size: 13.4rem;
   }
 }
 

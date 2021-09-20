@@ -1,69 +1,24 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { BrowserRouter } from 'react-router-dom';
-import GetItNow from './components/GetItNot';
-import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Perks from './components/Perks';
-import RedSection from './components/RedSection';
-import Reviews from './components/Reviews';
-import YellowSection from './components/YellowSection';
 import Footer from './Footer';
 
-const Layout = () => {
-  const navbarRef = useRef(null);
-  const headerRef = useRef(null);
-  const redSectionRef = useRef(null);
-  const yellowSectionRef = useRef(null);
-  const perksSectionRef = useRef(null);
-  const reviewsSectionRef = useRef(null);
-  const getItNowSectionRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState('header');
-
-  const checkPosition = ({ top, bottom, height }) => {
-    const navbarHeight = navbarRef.current.clientHeight;
-
-    // Checking which component is visible, assuming the bottom of the navbar as the top boundary. For having viewport top as the boundary, the conditional to evaluate should be "top <= 0 && bottom <= height && bottom > 0"
-    return top <= navbarHeight && bottom - navbarHeight <= height && bottom > 0;
-  };
-
-  useEffect(() => {
-    const listener = document.addEventListener('scroll', (e) => {
-      checkPosition(headerRef.current.getBoundingClientRect()) &&
-        setScrollPosition('header');
-
-      checkPosition(redSectionRef.current.getBoundingClientRect()) &&
-        setScrollPosition('redSection');
-
-      checkPosition(yellowSectionRef.current.getBoundingClientRect()) &&
-        setScrollPosition('yellowSection');
-
-      checkPosition(perksSectionRef.current.getBoundingClientRect()) &&
-        setScrollPosition('perksSection');
-
-      checkPosition(reviewsSectionRef.current.getBoundingClientRect()) &&
-        setScrollPosition('reviewsSection');
-
-      checkPosition(getItNowSectionRef.current.getBoundingClientRect()) &&
-        setScrollPosition('getItNowSection');
-    });
-
-    return () => {
-      document.removeEventListener('scroll', listener);
-    };
-  }, []);
-
+const Layout = ({ navbarRef, scrollPosition, children }) => {
   return (
     <BrowserRouter>
       <Navbar scrollPosition={scrollPosition} reference={navbarRef} />
-      <Header reference={headerRef} />
-      <RedSection reference={redSectionRef} />
-      <YellowSection reference={yellowSectionRef} />
-      <Perks reference={perksSectionRef} />
-      <Reviews reference={reviewsSectionRef} />
-      <GetItNow reference={getItNowSectionRef} />
+      {children}
       <Footer />
     </BrowserRouter>
   );
+};
+
+Layout.propTypes = {
+  navbarRef: PropTypes.object.isRequired,
+  scrollPosition: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Layout;

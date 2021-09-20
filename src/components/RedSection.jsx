@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import CustomCursor from './common/CustomCursor';
+import CTAButton from './common/CTAButton';
 
 const RedSection = ({ reference }) => {
   const [cursorType, setCursorType] = useState('pointer');
@@ -21,7 +22,7 @@ const RedSection = ({ reference }) => {
   };
 
   return (
-    <section className='red-section' ref={reference}>
+    <section id='red-section' className='red-section' ref={reference}>
       {cursorType !== 'pointer' ? (
         <CustomCursor cursorMessage='Click' cursorType={cursorType} />
       ) : null}
@@ -31,6 +32,7 @@ const RedSection = ({ reference }) => {
           Experience live versions of your favourite songs.
         </p>
         <button className='btn btn--small btn--white btn--red'>See Demo</button>
+        <CTAButton btnClasses='btn--small btn--red' />
       </div>
       <div
         className='section__images'

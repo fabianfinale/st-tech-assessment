@@ -2,12 +2,13 @@ import React from 'react';
 import { headerImages } from '../utils/headerImages';
 import Carousel from './common/Carousel';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Header = ({ reference }) => {
   const dataImages = headerImages.map((image) => image.imagePath);
 
   return (
-    <header className='header' ref={reference}>
+    <header id='header' className='header' ref={reference}>
       <Carousel
         className='header__carousel slider'
         items={headerImages}
@@ -21,9 +22,12 @@ const Header = ({ reference }) => {
           Experience your favourite artists like never before and from the
           comfort of your own home.
         </p>
-        <button className='btn btn--gradient' data-text='Try it now'>
+        <Link
+          to='/pricing'
+          className='btn btn--gradient'
+          data-text='Try it now'>
           Try it now
-        </button>
+        </Link>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ import { Icon } from '@mui/material';
 
 const Reviews = ({ reference }) => {
   return (
-    <section className='reviews-section' ref={reference}>
+    <section id='reviews-section' className='reviews-section' ref={reference}>
       <div className='section__images'>
         <img
           src={require('../assets/img/SmallSpeaker1-03.png').default}

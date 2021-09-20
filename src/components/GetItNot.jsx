@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 const GetItNow = ({ reference }) => {
   return (
-    <section className='get-it-now-section' ref={reference}>
+    <section
+      id='get-it-now-section'
+      className='get-it-now-section'
+      ref={reference}>
       <div className='section__content'>
         <h2 className='section__heading uppercase heading--red'>
           Get EXP|CON now

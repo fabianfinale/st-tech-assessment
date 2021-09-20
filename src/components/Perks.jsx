@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Perks = ({ reference }) => {
+const Perks = ({ id, reference }) => {
   return (
-    <section className='perks-section' ref={reference}>
+    <section id={id} className='perks-section' ref={reference}>
       <div className='section__content'>
         <h2 className='section__heading uppercase'>Perks</h2>
         <div className='section__listing'>
@@ -41,7 +41,12 @@ const Perks = ({ reference }) => {
 };
 
 Perks.propTypes = {
+  id: PropTypes.string.isRequired,
   reference: PropTypes.object.isRequired,
+};
+
+Perks.defaultProps = {
+  id: 'perks-section',
 };
 
 export default Perks;

@@ -39,6 +39,7 @@ const YellowSection = ({ reference }) => {
 
   return (
     <section
+      id='yellow-section'
       className='yellow-section'
       ref={reference}
       onMouseEnter={() => setIsTracking(true)}

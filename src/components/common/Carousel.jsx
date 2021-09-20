@@ -16,9 +16,11 @@ const Carousel = ({ className, items }) => {
       setIndex
     );
 
-    setInterval(() => {
+    const interval = setInterval(() => {
       webGLTransition.current.next();
     }, 10000);
+
+    return () => clearInterval(interval);
   }, [items]);
 
   const handleChange = (id) => {

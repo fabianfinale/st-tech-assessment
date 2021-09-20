@@ -7,7 +7,6 @@ const CustomCursor = ({ cursorType, cursorMessage }) => {
   const cursorClasses = {
     pointer: 'custom-cursor',
     circle: 'custom-cursor--circle',
-    shade: 'custom-cursor--shade',
   };
 
   const { x, y } = CursorPosition();
@@ -21,7 +20,7 @@ const CustomCursor = ({ cursorType, cursorMessage }) => {
 };
 
 CustomCursor.propTypes = {
-  cursorType: PropTypes.oneOf(['pointer', 'circle', 'shade']).isRequired,
+  cursorType: PropTypes.oneOf(['pointer', 'circle']).isRequired,
   cursorMessage: PropTypes.string,
 };
 

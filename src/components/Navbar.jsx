@@ -2,27 +2,21 @@ import { Icon } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import CursorPosition from '../hooks/CursorPosition';
+import CTAButton from './common/CTAButton';
 
 const Navbar = ({ scrollPosition, reference }) => {
   const [collapsed, setCollapsed] = useState(true);
-  const [isTracking, setIsTracking] = useState(false);
-  const { x, y } = CursorPosition();
-
-  const handleMouseMove = (e) => {
-    if (isTracking) {
-      e.target.style.setProperty('--x', `${x - e.target.offsetLeft}px`);
-      e.target.style.setProperty('--y', `${y - e.target.offsetTop}px`);
-    }
-  };
 
   const navbarColor = {
+    default: 'navbar--header',
     header: 'navbar--header',
-    redSection: 'navbar--red',
-    yellowSection: 'navbar--yellow',
-    perksSection: 'navbar--black',
-    reviewsSection: 'navbar--blue',
-    getItNowSection: 'navbar--get-it-now',
+    pricing: 'navbar--header',
+    'pricing-perks-section': 'navbar--header',
+    'red-section': 'navbar--red',
+    'yellow-section': 'navbar--yellow',
+    'perks-section': 'navbar--black',
+    'reviews-section': 'navbar--blue',
+    'get-it-now-section': 'navbar--get-it-now',
   };
 
   const collapsibleClass = collapsed
@@ -38,7 +32,9 @@ const Navbar = ({ scrollPosition, reference }) => {
             onClick={() => setCollapsed(!collapsed)}>
             menu
           </Icon>
-          <p className='navbar__logo'>EXP|CON</p>
+          <Link className='navbar__logo' to='/'>
+            EXP|CON
+          </Link>
         </div>
         <div className='collapsible__shape'></div>
         <div className='collapsible__content'>
@@ -61,13 +57,7 @@ const Navbar = ({ scrollPosition, reference }) => {
           </ul>
         </div>
       </div>
-      <button
-        className='btn btn__white btn--extra-small btn--cta'
-        onMouseEnter={() => setIsTracking(true)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={() => setIsTracking(false)}>
-        <span className='btn__text'>Try it now</span>
-      </button>
+      <CTAButton />
     </nav>
   );
 };

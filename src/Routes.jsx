@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router';
 import LandingPage from './components/LandingPage';
 import PricingPage from './components/PricingPage';
+import Payment from './components/Payment';
 
 const Routes = ({ setScrollPosition, navbarRef }) => {
   return (
@@ -18,6 +19,9 @@ const Routes = ({ setScrollPosition, navbarRef }) => {
           setScrollPosition={setScrollPosition}
           navbarRef={navbarRef}
         />
+      </Route>
+      <Route path='/payment'>
+        <Payment setScrollPosition={setScrollPosition} navbarRef={navbarRef} />
       </Route>
     </Switch>
   );

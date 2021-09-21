@@ -43,6 +43,7 @@ h2,
 h3 {
   color: #fff;
   font-weight: 700;
+  letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
@@ -110,6 +111,7 @@ h3 {
 body {
   font-family: 'HelveticaNeue', Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
+  letter-spacing: 0.1em;
   line-height: 1.5;
   margin: 0;
 }
@@ -121,7 +123,7 @@ body {
   cursor: pointer;
   font-size: calc(1.1rem + 1.54vw);
   font-weight: 700;
-  letter-spacing: 2.3px;
+  letter-spacing: 0.1em;
   line-height: 1.21;
   outline: 0;
   padding: 2.7rem 6.4rem;
@@ -345,7 +347,7 @@ body {
 .navbar__logo {
   font-size: calc(1.425rem + 2.1vw);
   height: calc(1.545rem + 3.54vw);
-  letter-spacing: 4.8px;
+  letter-spacing: 0.1em;
   line-height: 1.215;
   margin: 0;
   text-decoration: none;
@@ -388,7 +390,7 @@ body {
   color: #fff;
   font-size: calc(1.425rem + 2.1vw);
   font-weight: 700;
-  letter-spacing: 4.7px;
+  letter-spacing: 0.1em;
   line-height: 1.215;
   margin-bottom: 1.2rem;
   text-decoration: none;
@@ -552,7 +554,7 @@ body {
 }
 
 .header__title {
-  letter-spacing: 6.5px;
+  letter-spacing: 0.1em;
   line-height: 1.215;
   margin-bottom: 0;
   text-align: center;
@@ -562,7 +564,7 @@ body {
   color: #fff;
   font-size: calc(1.425rem + 1.1vw);
   font-weight: 500;
-  letter-spacing: 3.2px;
+  letter-spacing: 0.1em;
   line-height: 1.375;
   margin-top: 3.2rem;
   text-align: center;
@@ -609,7 +611,7 @@ body {
 
 .section__text {
   font-size: calc(1.425rem + 1.1vw);
-  letter-spacing: 5.1px;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   color: #0b0b0b;
 }
@@ -639,13 +641,13 @@ body {
 @media (max-height: 600px) {
   .section__heading {
     font-size: 2.4rem;
-    letter-spacing: 2.4px;
+    letter-spacing: 0.1em;
     margin-bottom: 0.7rem;
   }
 
   .section__text {
     font-size: 2.1rem;
-    letter-spacing: 2.1px;
+    letter-spacing: 0.1em;
     line-height: 1.2;
   }
 
@@ -667,13 +669,13 @@ body {
   }
   .section__heading {
     font-size: 7.4rem;
-    letter-spacing: 7.4px;
+    letter-spacing: 0.1em;
     margin-bottom: 2.7rem;
   }
 
   .section__text {
     font-size: 5.1rem;
-    letter-spacing: 5.1px;
+    letter-spacing: 0.1em;
     color: #0b0b0b;
   }
 
@@ -788,7 +790,7 @@ body {
 
 .listing__heading {
   font-weight: 700;
-  letter-spacing: 5.1px;
+  letter-spacing: 0.1em;
   line-height: 1.215;
 }
 
@@ -831,7 +833,7 @@ body {
 .listing__text {
   color: #fff;
   font-size: calc(1.255rem + 1vw);
-  letter-spacing: 3.5px;
+  letter-spacing: 0.1em;
   line-height: 1.17;
   margin-top: 2.8rem;
 }
@@ -900,7 +902,7 @@ body {
 
 .reviews-section .listing__heading {
   font-size: calc(1.255rem + 1vw);
-  letter-spacing: 3.5px;
+  letter-spacing: 0.1em;
   line-height: 1.17;
 }
 
@@ -1041,7 +1043,7 @@ body {
 
 .list__item {
   font-size: calc(1.255rem + 1.5vw);
-  letter-spacing: 4.7px;
+  letter-spacing: 0.1em;
   line-height: 1.36;
 }
 
@@ -1049,7 +1051,7 @@ body {
   content: 'music_note';
   font-family: 'Material Icons';
   font-size: 2.1rem;
-  letter-spacing: 2.1px;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   margin-right: 2rem;
 }
@@ -1076,6 +1078,7 @@ body {
     font-size: 1.5rem;
   }
 }
+
 @media (min-width: 1200px) {
   .pricing-section {
     padding-top: 20rem;
@@ -1089,6 +1092,225 @@ body {
 
   .price {
     font-size: 13.4rem;
+  }
+}
+
+/* Payment Section component */
+.payment-section {
+  align-items: flex-start;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 18.5rem;
+}
+
+.navbar--payment-section .navbar__logo,
+.navbar--payment-section .navbar__toggler {
+  color: #000;
+}
+
+.payment-section form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.two-columns {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form__group {
+  margin-bottom: 14.8rem;
+  width: 100%;
+}
+
+.form__group.group1 {
+  width: auto;
+}
+
+.form__label {
+  align-items: center;
+  display: flex;
+  font-size: 2.2rem;
+  font-weight: 700;
+  justify-content: flex-start;
+  line-height: 1.5;
+  margin-bottom: 3.1rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.form__label.top {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.two-columns > .form__label:nth-of-type(n + 2) {
+  margin-left: 3.7rem;
+}
+
+.form__label input,
+.form__label select {
+  border: 2px solid #000;
+  margin-top: 1.2rem;
+}
+
+.form__label input:focus,
+.form__label select:focus {
+  border-bottom: 2px solid var(--color-purple);
+  box-shadow: inset 0px -10px 0 -3px var(--color-purple);
+  outline: none;
+}
+
+.form__label .error {
+  border-bottom: 2px solid var(--color-red);
+  box-shadow: inset 0px -10px 0 -3px var(--color-red);
+  outline: none;
+}
+
+.form__label--red {
+  color: var(--color-red);
+}
+
+.form__label--yellow {
+  color: var(--color-yellow);
+}
+
+.form__label--blue {
+  color: var(--color-blue);
+}
+
+.form__label select {
+  appearance: none;
+  background-image: url(../assets/img/baseline_expand_more_black_24dp.png);
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+  background-size: 42px;
+  outline: none;
+}
+
+.form__label input[type='radio'] {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+.form__label .radio-btn {
+  border-radius: 50%;
+  border: 0.1em solid #000;
+  cursor: pointer;
+  display: block;
+  height: 28px;
+  margin-right: 0.5em;
+  width: 28px;
+}
+
+.form__label .checked {
+  background-color: currentColor;
+  border-color: currentColor;
+}
+
+.radio-group {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form__control {
+  font-size: 2.8rem;
+  height: 74px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 3.1rem;
+  padding-left: 3.8rem;
+  width: 100%;
+}
+
+.form__control::placeholder {
+  color: var(--color-red);
+}
+
+.radio-group .form__label:nth-of-type(n + 2) {
+  margin-left: 8.3rem;
+}
+
+.radio-group .form__label {
+  font-size: calc(1.355rem + 1.3vw);
+}
+
+.two-columns > .form__group:nth-of-type(n + 2) {
+  margin-left: 12rem;
+}
+
+.terms {
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
+  max-width: 650px;
+}
+
+.terms a {
+  color: var(--color-purple);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .radio-group {
+    flex-direction: column;
+  }
+
+  .radio-group .form__label:nth-of-type(n + 2) {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .payment-section {
+    padding: 10rem 2rem;
+  }
+
+  .two-columns {
+    flex-direction: column;
+  }
+
+  .two-columns > .form__group:nth-of-type(n + 2) {
+    margin-left: 0;
+  }
+
+  .form__group {
+    margin-bottom: 1.8rem;
+  }
+}
+
+@media (max-width: 1624px) {
+  .form__group .two-columns {
+    flex-direction: column;
+  }
+
+  .two-columns > .form__label:nth-of-type(n + 2) {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .payment-section {
+    padding-top: 20rem;
+  }
+
+  .group__heading {
+    font-size: 4.5rem;
+  }
+
+  .radio-group .form__label {
+    font-size: 4.4rem;
   }
 }
 
@@ -1111,7 +1333,7 @@ body {
 .footer__link span {
   color: #fff;
   font-size: calc(1.255rem + 1vw);
-  letter-spacing: 3.5px;
+  letter-spacing: 0.1em;
   line-height: 1.17;
   text-decoration: none;
 }
@@ -1133,7 +1355,7 @@ body {
 .footer__copyright {
   color: #fff;
   font-size: calc(1.1rem + 1vw);
-  letter-spacing: 2.4px;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   margin: 0;
 }

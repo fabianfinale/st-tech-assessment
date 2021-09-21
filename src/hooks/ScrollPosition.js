@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function ScrollPosition(references, navbarRef) {
-  const [scrollPosition, setScrollPosition] = useState('default');
+  const [scrollPosition, setScrollPosition] = useState('default-position');
 
   useEffect(() => {
     const checkPosition = ({ top, bottom, height }) => {

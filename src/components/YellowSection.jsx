@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import CustomCursor from './common/CustomCursor';
 import CursorPosition from '../hooks/CursorPosition';
+import CTAButton from './common/CTAButton';
 
 const YellowSection = ({ reference }) => {
   const [isTracking, setIsTracking] = useState(false);
@@ -63,18 +64,14 @@ const YellowSection = ({ reference }) => {
         <p className='section__text'>
           Experience Experience concerts up close and personal.
         </p>
-        <button className='btn btn--small btn--white btn--yellow'>
-          See Demo
-        </button>
+        <CTAButton btnClasses='btn--small btn--yellow' text='See Demo' />
       </div>
       <div className='section__content masked--motion' ref={textMaskRef}>
         <h2 className='section__heading uppercase'>Front Row Seats</h2>
         <p className='section__text'>
           Experience Experience concerts up close and personal.
         </p>
-        <button className='btn btn--small btn--white btn--blue'>
-          See Demo
-        </button>
+        <CTAButton btnClasses='btn--small btn--blue' text='See Demo' />
       </div>
     </section>
   );

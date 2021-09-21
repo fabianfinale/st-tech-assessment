@@ -22,7 +22,6 @@ const PricingPage = ({ navbarRef, setScrollPosition }) => {
 
   useEffect(() => {
     setScrollPosition(scrollPosition);
-    console.log(`scrollPosition`, scrollPosition);
   }, [scrollPosition, setScrollPosition]);
 
   return (

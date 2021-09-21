@@ -8,9 +8,9 @@ const Navbar = ({ scrollPosition, reference }) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const navbarColor = {
-    default: 'navbar--header',
-    header: 'navbar--header',
-    pricing: 'navbar--header',
+    'default-position': 'navbar--header',
+    'header-section': 'navbar--header',
+    'pricing-section': 'navbar--header',
     'pricing-perks-section': 'navbar--header',
     'red-section': 'navbar--red',
     'yellow-section': 'navbar--yellow',
@@ -57,7 +57,16 @@ const Navbar = ({ scrollPosition, reference }) => {
           </ul>
         </div>
       </div>
-      <CTAButton />
+      {scrollPosition === 'perks-section' ? (
+        <Link
+          to='/pricing'
+          className='btn btn--gradient btn--extra-small'
+          data-text='Try it now'>
+          Try it now
+        </Link>
+      ) : (
+        <CTAButton target='/pricing' />
+      )}
     </nav>
   );
 };

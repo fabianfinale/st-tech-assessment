@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const GetItNow = ({ reference }) => {
   return (
@@ -15,11 +16,13 @@ const GetItNow = ({ reference }) => {
           Purchase and download the app.
         </p>
       </div>
-      <div className='section__cta'>
-        <button className='btn btn--gradient' data-text='Try it now'>
-          Try it now
-        </button>
-      </div>
+
+      <Link
+        to='/pricing'
+        className='btn btn--small btn--gradient'
+        data-text='Try it now'>
+        Try it now
+      </Link>
     </section>
   );
 };

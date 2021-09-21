@@ -8,7 +8,7 @@ const Header = ({ reference }) => {
   const dataImages = headerImages.map((image) => image.imagePath);
 
   return (
-    <header id='header' className='header' ref={reference}>
+    <header id='header-section' className='header' ref={reference}>
       <Carousel
         className='header__carousel slider'
         items={headerImages}

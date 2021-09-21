@@ -144,6 +144,7 @@ body {
   opacity: 1;
   overflow: hidden;
   position: relative;
+  text-align: center;
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -233,12 +234,14 @@ body {
   color: #fff;
   overflow: hidden;
   position: relative;
+  text-align: center;
   text-decoration: none;
 }
 
 .btn--gradient::before {
   content: attr(data-text);
   position: absolute;
+  text-align: center;
   z-index: 30;
 }
 
@@ -776,7 +779,7 @@ body {
 }
 
 .listing__group {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -999,7 +1002,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .section__cta {
+  .get-it-now-section {
     padding-right: 15rem;
   }
 }

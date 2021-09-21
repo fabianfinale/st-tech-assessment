@@ -31,8 +31,7 @@ const RedSection = ({ reference }) => {
         <p className='section__text'>
           Experience live versions of your favourite songs.
         </p>
-        <button className='btn btn--small btn--white btn--red'>See Demo</button>
-        <CTAButton btnClasses='btn--small btn--red' />
+        <CTAButton btnClasses='btn--small btn--red' text='See Demo' />
       </div>
       <div
         className='section__images'

@@ -2,13 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import useScrollPosition from '../hooks/useScrollPosition';
 import useQuery from '../hooks/useQuery';
-import RadioButton from './common/RadioButton';
-import TextInput from './common/TextInput';
-import Select from './common/Select';
-import { countries } from '../utils/countries';
-import { months } from '../utils/months';
-import { years } from '../utils/years';
 import { Link } from 'react-router-dom';
+import FormGroup1 from './common/FormGroup1';
+import FormGroup2 from './common/FormGroup2';
+import FormGroup3 from './common/FormGroup3';
 
 const Payment = ({ navbarRef, setScrollPosition }) => {
   const paymentRef = useRef(null);
@@ -59,8 +56,9 @@ const Payment = ({ navbarRef, setScrollPosition }) => {
         formErrors[key] = 'This value is required';
       }
     }
+
     if (Object.keys(formErrors).length > 0) return setErrors(formErrors);
-    console.log(`values`, values);
+
     setValues(initialState);
   };
 
@@ -68,138 +66,15 @@ const Payment = ({ navbarRef, setScrollPosition }) => {
     <section id='payment-section' className='payment-section' ref={paymentRef}>
       <h2 className='section__heading uppercase text--black'>Reviews</h2>
       <form onSubmit={handleSubmit}>
-        <div className='form__group group1'>
-          <h3 className='group__heading text--black'>1. Select your plan</h3>
-          <div className='radio-group'>
-            <RadioButton
-              name='plan'
-              additionalClasses='form__label--red'
-              label='basic'
-              value='basic'
-              selected={values.plan}
-              onChange={handleChange}
-            />
-            <RadioButton
-              name='plan'
-              additionalClasses='form__label--yellow'
-              label='advanced'
-              value='advanced'
-              selected={values.plan}
-              onChange={handleChange}
-            />
-            <RadioButton
-              name='plan'
-              additionalClasses='form__label--blue'
-              label='pro'
-              value='pro'
-              selected={values.plan}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
+        <FormGroup1 selectedValue={values.plan} onChange={handleChange} />
         <div className='two-columns'>
-          <div className='form__group group2'>
-            <h3 className='group__heading text--black'>
-              2. Billing Information
-            </h3>
-            <TextInput
-              name='fullName'
-              additionalClasses='top'
-              label='Full name'
-              value={values.fullName}
-              onChange={handleChange}
-              error={errors?.fullName}
-            />
-            <TextInput
-              name='billingAddress'
-              additionalClasses='top'
-              label='Billing Address'
-              value={values.billingAddress}
-              onChange={handleChange}
-              error={errors?.billingAddress}
-            />
-            <div className='two-columns'>
-              <TextInput
-                name='city'
-                additionalClasses='top'
-                label='City'
-                value={values.city}
-                onChange={handleChange}
-                error={errors?.city}
-              />
-              <TextInput
-                name='postalCode'
-                additionalClasses='top'
-                label='Postal Code'
-                value={values.postalCode}
-                onChange={handleChange}
-                error={errors?.postalCode}
-              />
-            </div>
-            <Select
-              name='country'
-              optionsList={countries}
-              additionalClasses='top'
-              label='Country'
-              value={values.country}
-              onChange={handleChange}
-              error={errors?.country}
-            />
-          </div>
-          <div className='form__group group3'>
-            <h3 className='group__heading text--black'>
-              3. Credit Card Information
-            </h3>
-            <TextInput
-              name='cardHolder'
-              additionalClasses='top'
-              label="Cardholder's name"
-              value={values.cardHolder}
-              onChange={handleChange}
-              error={errors?.cardHolder}
-            />
-            <TextInput
-              name='cardNumber'
-              additionalClasses='top'
-              label='Card Number'
-              value={values.cardNumber}
-              onChange={handleChange}
-              error={errors?.cardNumber}
-            />
-            <div className='two-columns'>
-              <Select
-                name='expirationMonth'
-                optionsList={months}
-                additionalClasses='top'
-                label='Expiry month'
-                value={values.expirationMonth}
-                onChange={handleChange}
-                error={errors?.expirationMonth}
-              />
-              <Select
-                name='expirationYear'
-                optionsList={years}
-                additionalClasses='top'
-                label='Expiry Year'
-                value={values.expirationYear}
-                onChange={handleChange}
-                error={errors?.expirationYear}
-              />
-            </div>
-            <TextInput
-              name='cvv'
-              additionalClasses='top'
-              label='CVV'
-              value={values.cvv}
-              onChange={handleChange}
-              error={errors?.cvv}
-            />
-          </div>
+          <FormGroup2 values={values} errors={errors} onChange={handleChange} />
+          <FormGroup3 values={values} errors={errors} onChange={handleChange} />
         </div>
         <p className='terms'>
           By continuing, I acknowledge that I’ve read and agree to the{' '}
           <Link to='#'>Terms of Service </Link> &{' '}
-          <Link to='#'>Privacy Policy </Link>.
+          <Link to='#'>Privacy Policy</Link>.
         </p>
         <button
           type='submit'

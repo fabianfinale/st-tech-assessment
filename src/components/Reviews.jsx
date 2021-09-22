@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '@mui/material';
+import Review from './common/Review';
 
 const Reviews = ({ reference }) => {
   return (
@@ -18,51 +18,18 @@ const Reviews = ({ reference }) => {
       <div className='section__content'>
         <h2 className='section__heading uppercase'>Reviews</h2>
         <div className='section__listing'>
-          <div className='listing__group'>
-            <div className='rating'>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-            </div>
-            <h3 className='listing__heading heading--white uppercase'>
-              Artist
-            </h3>
-            <p className='listing__text text--black'>
-              “Love it, it’s the Best.I can’t live without it!”
-            </p>
-          </div>
-          <div className='listing__group'>
-            <div className='rating'>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-            </div>
-            <h3 className='listing__heading heading--white uppercase'>
-              Producer
-            </h3>
-            <p className='listing__text text--black'>
-              “Love it, it’s the Best.I can’t live without it!”
-            </p>
-          </div>
-          <div className='listing__group'>
-            <div className='rating'>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-              <Icon>start-rate</Icon>
-            </div>
-            <h3 className='listing__heading heading--white uppercase'>
-              Music Fan
-            </h3>
-            <p className='listing__text text--black'>
-              “Love it, it’s the Best.I can’t live without it!”
-            </p>
-          </div>
+          <Review
+            author='Artist'
+            review='“Love it, it’s the Best.I can’t live without it!”'
+          />
+          <Review
+            author='Producer'
+            review='“Love it, it’s the Best.I can’t live without it!”'
+          />
+          <Review
+            author='Music Fan'
+            review='“Love it, it’s the Best.I can’t live without it!”'
+          />
         </div>
       </div>
     </section>

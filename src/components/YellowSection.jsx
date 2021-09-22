@@ -1,15 +1,16 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import CustomCursor from './common/CustomCursor';
-import CursorPosition from '../hooks/CursorPosition';
-import CTAButton from './common/CTAButton';
+import useCursorPosition from '../hooks/useCursorPosition';
+import YellowSectionBackground from './common/YellowSectionBackground';
+import YellowSectionContent from './common/YellowSectionContent';
 
 const YellowSection = ({ reference }) => {
   const [isTracking, setIsTracking] = useState(false);
   const maskRef = useRef(null);
   const textMaskRef = useRef(null);
   const maskDiameter = 345;
-  const { x, y } = CursorPosition();
+  const { x, y } = useCursorPosition();
 
   const getMaskPosition = (maskReference, axis) => {
     return axis === 'x'
@@ -46,33 +47,16 @@ const YellowSection = ({ reference }) => {
       onMouseEnter={() => setIsTracking(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setIsTracking(false)}>
-      <img className='yellow-section__bg masked' src='img/Image 4.png' alt='' />
+      <YellowSectionBackground />
       {isTracking ? (
         <React.Fragment>
           <CustomCursor cursorMessage='Reveal' cursorType='circle' />
-          <img
-            className='yellow-section__bg masked--motion'
-            src='img/Image 4.png'
-            alt=''
-            ref={maskRef}
-          />
+          <YellowSectionBackground maskType='motion' reference={maskRef} />
         </React.Fragment>
       ) : null}
 
-      <div className='section__content'>
-        <h2 className='section__heading uppercase'>Front Row Seats</h2>
-        <p className='section__text'>
-          Experience Experience concerts up close and personal.
-        </p>
-        <CTAButton btnClasses='btn--small btn--yellow' text='See Demo' />
-      </div>
-      <div className='section__content masked--motion' ref={textMaskRef}>
-        <h2 className='section__heading uppercase'>Front Row Seats</h2>
-        <p className='section__text'>
-          Experience Experience concerts up close and personal.
-        </p>
-        <CTAButton btnClasses='btn--small btn--blue' text='See Demo' />
-      </div>
+      <YellowSectionContent />
+      <YellowSectionContent mask={true} reference={textMaskRef} />
     </section>
   );
 };

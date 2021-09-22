@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import CursorPosition from '../../hooks/CursorPosition';
+import useCursorPosition from '../../hooks/useCursorPosition';
 
 const CTAButton = ({ target, btnClasses, text }) => {
   const [isTracking, setIsTracking] = useState(false);
-  const { x, y } = CursorPosition();
+  const { x, y } = useCursorPosition();
 
   const handleMouseMove = (e) => {
     if (isTracking) {

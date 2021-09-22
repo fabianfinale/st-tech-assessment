@@ -6,7 +6,7 @@ import Perks from './Perks';
 import RedSection from './RedSection';
 import Reviews from './Reviews';
 import YellowSection from './YellowSection';
-import ScrollPosition from '../hooks/ScrollPosition';
+import useScrollPosition from '../hooks/useScrollPosition';
 
 const LandingPage = ({ navbarRef, setScrollPosition }) => {
   const headerRef = useRef(null);
@@ -16,7 +16,7 @@ const LandingPage = ({ navbarRef, setScrollPosition }) => {
   const reviewsSectionRef = useRef(null);
   const getItNowSectionRef = useRef(null);
 
-  const scrollPosition = ScrollPosition(
+  const scrollPosition = useScrollPosition(
     {
       headerRef,
       redSectionRef,

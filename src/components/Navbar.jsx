@@ -11,6 +11,7 @@ const Navbar = ({ scrollPosition, reference }) => {
     'default-position': 'navbar--header',
     'header-section': 'navbar--header',
     'pricing-section': 'navbar--header',
+    'payment-section': 'navbar--header navbar--payment-section',
     'pricing-perks-section': 'navbar--header',
     'red-section': 'navbar--red',
     'yellow-section': 'navbar--yellow',
@@ -50,7 +51,7 @@ const Navbar = ({ scrollPosition, reference }) => {
               </Link>
             </li>
             <li>
-              <Link className='nav__item' to='#'>
+              <Link className='nav__item' to='/pricing'>
                 Pricing
               </Link>
             </li>

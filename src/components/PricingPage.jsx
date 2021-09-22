@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Perks from './Perks';
 import Pricing from './Pricing';
-import ScrollPosition from '../hooks/ScrollPosition';
+import useScrollPosition from '../hooks/useScrollPosition';
 
 const PricingPage = ({ navbarRef, setScrollPosition }) => {
   const pricingRef = useRef(null);
   const pricingPerksSectionRef = useRef(null);
 
-  const scrollPosition = ScrollPosition(
+  const scrollPosition = useScrollPosition(
     {
       pricingRef,
       pricingPerksSectionRef,

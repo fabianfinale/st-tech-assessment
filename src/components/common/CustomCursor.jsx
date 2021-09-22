@@ -1,7 +1,7 @@
 import React from 'react';
 import 'custom-cursor-react/dist/index.css';
-import CursorPosition from '../../hooks/CursorPosition';
 import PropTypes from 'prop-types';
+import useCursorPosition from '../../hooks/useCursorPosition';
 
 const CustomCursor = ({ cursorType, cursorMessage }) => {
   const cursorClasses = {
@@ -9,7 +9,7 @@ const CustomCursor = ({ cursorType, cursorMessage }) => {
     circle: 'custom-cursor--circle',
   };
 
-  const { x, y } = CursorPosition();
+  const { x, y } = useCursorPosition();
   return (
     <div
       className={`custom-cursor ${cursorClasses[cursorType]}`}

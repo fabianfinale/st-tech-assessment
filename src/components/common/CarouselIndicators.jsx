@@ -12,10 +12,6 @@ const CarouselIndicators = ({ items, index, onClick: handleClick }) => {
           onClick={handleClick}
           isActive={item.id === index}
         />
-        // <button
-        //   key={item.id}
-        //   className={`carousel__indicator ${item.id === index ? 'active' : ''}`}
-        //   onClick={() => handleClick(item.id)}></button>
       ))}
     </div>
   );

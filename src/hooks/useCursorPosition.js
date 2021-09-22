@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function CursorPosition() {
+export default function useCursorPosition() {
   const [cursorPosition, setCursorPosition] = useState({ x: null, y: null });
 
   useEffect(() => {

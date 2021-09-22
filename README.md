@@ -1,3 +1,7 @@
+# Live Demo
+
+A live demo can be found at [https://st-tech-assessment.netlify.app/](https://st-tech-assessment.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,5 @@
 # Live Demo
+[![Netlify Status](https://api.netlify.com/api/v1/badges/230e983e-eab3-4c05-b48b-97cb2bd4bf35/deploy-status)](https://app.netlify.com/sites/st-tech-assessment/deploys)
 
 A live demo can be found at [https://st-tech-assessment.netlify.app/](https://st-tech-assessment.netlify.app/)
 
